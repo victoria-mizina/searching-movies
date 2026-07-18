@@ -19,5 +19,8 @@
   },
   "devDependencies": {
     "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "on-change": "5.0"
   }
 }

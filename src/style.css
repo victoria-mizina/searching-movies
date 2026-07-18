@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(159, 198, 233);
+    width: 100vw;
+    padding: 1em;
+}
+.input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:80vw ;
+    border-bottom: 1px solid rgb(131, 131, 131);
+    padding: 0.5em;
+}
+.search{
+    width: 90%;
+    border: none;
+}
+.input>button{
+    padding: 0.3em;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 0 3px rgb(90, 90, 90);
+    transition: 0.3s;
+}
+.input>button:hover{
+    transform: scale(1.05);
+}
