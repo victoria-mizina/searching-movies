@@ -1,6 +1,7 @@
+import 'dotenv/config'
 import view from './view.js'
+const API_KEY = process.env.API_KEY
 function app(){
-    console.log(1)
     const stateInit = {
         movies: [],
         error: ''
@@ -11,9 +12,11 @@ function app(){
     }
     const watch = view(stateInit,elements)
     elements.button.addEventListener('click', function(){
-        fetch('http://www.omdbapi.com/?apikey=&s=spider')
+        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=spider`)
             .then(function(response){return response.json()})
-            .then(function(movies){console.log(movies)})
+            .then(function(movies){
+                watch.movies = movies.Search
+            })
             .catch(function(error){console.log('ошибка')})
     })
 }
