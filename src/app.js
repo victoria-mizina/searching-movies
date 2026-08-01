@@ -12,7 +12,8 @@ function app(){
     }
     const watch = view(stateInit,elements)
     elements.button.addEventListener('click', function(){
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=spider`)
+        const input = elements.input.value
+        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${input}`)
             .then(function(response){return response.json()})
             .then(function(movies){
                 watch.movies = movies.Search
