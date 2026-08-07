@@ -4,7 +4,8 @@ const API_KEY = process.env.API_KEY
 function app(){
     const stateInit = {
         movies: [],
-        error: ''
+        error: '',
+        isLoading: false
     }
     const elements = {
         button: document.querySelector('.input>button'),
@@ -12,13 +13,16 @@ function app(){
     }
     const watch = view(stateInit,elements)
     elements.button.addEventListener('click', function(){
+        watch.isLoading = true
         const input = elements.input.value
         fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${input}`)
             .then(function(response){return response.json()})
             .then(function(movies){
+                watch.isLoading = false
                 watch.movies = movies.Search
             })
             .catch(function(error){console.log('ошибка')})
     })
+
 }
 app()

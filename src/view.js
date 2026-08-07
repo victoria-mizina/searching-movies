@@ -4,6 +4,9 @@ function view (state,elements){
         if (path === 'movies'){
             renderMovies(value)
         }
+        if(path === 'isLoading'){
+            elements.button.disabled = value
+        }
     })
     return watch
 }
