@@ -6,6 +6,15 @@ function view (state,elements){
         }
         if(path === 'isLoading'){
             elements.button.disabled = value
+            const loaderCont = document.querySelector('.loader-container')
+            if(value === true){
+                const loader = document.createElement('span')
+                loader.classList.add('loader')
+                loaderCont.append(loader)
+                
+            }else{
+                loaderCont.innerHTML=''
+            }
         }
     })
     return watch

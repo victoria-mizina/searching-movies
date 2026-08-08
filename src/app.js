@@ -13,6 +13,7 @@ function app(){
     }
     const watch = view(stateInit,elements)
     elements.button.addEventListener('click', function(){
+        
         watch.isLoading = true
         const input = elements.input.value
         fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${input}`)
